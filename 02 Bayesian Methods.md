@@ -200,24 +200,6 @@ with pm.Model() as model:
 
 
 
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='8000' class='' max='8000' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [8000/8000 04:15<00:00 Sampling 4 chains, 0 divergences]
-</div>
-
-
     Sampling 4 chains for 1_000 tune and 1_000 draw iterations (4_000 + 4_000 draws total) took 272 seconds.
 
 
@@ -283,7 +265,7 @@ az.plot_joint(trace, kind='kde', fill_last=False)
 
 
     
-![png](output_15_2.png)
+![png](images/02/output_15_2.png)
     
 
 
@@ -299,19 +281,6 @@ az.summary(trace)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -363,7 +332,7 @@ az.summary(trace)
 az.plot_posterior(trace)
 ```
 
-    Got error No model on context stack. trying to find log_likelihood in translation.
+  
 
 
 
@@ -376,7 +345,7 @@ az.plot_posterior(trace)
 
 
     
-![png](output_17_2.png)
+![png](images/02/output_17_2.png)
     
 
 
@@ -385,7 +354,6 @@ az.plot_posterior(trace)
 pm.plots.autocorrplot(trace, figsize=(10,5))
 ```
 
-    Got error No model on context stack. trying to find log_likelihood in translation.
 
 
 
@@ -404,7 +372,7 @@ pm.plots.autocorrplot(trace, figsize=(10,5))
 
 
     
-![png](output_18_2.png)
+![png](images/02/output_18_2.png)
     
 
 
@@ -414,8 +382,6 @@ bfmi = pm.bfmi(trace)
 pm.energyplot(trace, figsize=(6,4))
 ```
 
-    Got error No model on context stack. trying to find log_likelihood in translation.
-    Got error No model on context stack. trying to find log_likelihood in translation.
 
 
 
@@ -427,7 +393,7 @@ pm.energyplot(trace, figsize=(6,4))
 
 
     
-![png](output_19_2.png)
+![png](images/02/output_19_2.png)
     
 
 
@@ -444,26 +410,6 @@ ppc = pm.sample_posterior_predictive(trace, samples=1000, model=model)
 
 np.asarray(ppc['y']).shape
 ```
-
-
-
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='1000' class='' max='1000' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [1000/1000 00:01<00:00]
-</div>
-
 
 
 
@@ -490,7 +436,7 @@ ax.set(title='PPC')
 
 
     
-![png](output_23_1.png)
+![png](images/02/output_23_1.png)
     
 
 
@@ -498,8 +444,6 @@ ax.set(title='PPC')
 ```python
 az.plot_forest(trace, combined=True)
 ```
-
-    Got error No model on context stack. trying to find log_likelihood in translation.
 
 
 
@@ -511,7 +455,7 @@ az.plot_forest(trace, combined=True)
 
 
     
-![png](output_24_2.png)
+![png](images/02/output_24_2.png)
     
 
 
@@ -532,7 +476,7 @@ sns.boxplot(x='fare', y='price', data=data)
 
 
     
-![png](output_26_1.png)
+![png](images/02/output_26_1.png)
     
 
 
@@ -570,77 +514,6 @@ with pm.Model() as compGroups:
 az.plot_trace(trace_g, compact=False)
 ```
 
-    Auto-assigning NUTS sampler...
-    Initializing NUTS using jitter+adapt_diag...
-    Multiprocess sampling (4 chains in 4 jobs)
-    NUTS: [sigma, mu]
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-
-
-
-
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='40000' class='' max='40000' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [40000/40000 1:48:53<00:00 Sampling 4 chains, 934 divergences]
-</div>
-
-
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/numpy/core/fromnumeric.py:87: RuntimeWarning: overflow encountered in reduce
-      return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:1955: RuntimeWarning: invalid value encountered in true_divide
-      return x / y
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:2893: RuntimeWarning: divide by zero encountered in log
-      return np.log(x)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/numpy/core/fromnumeric.py:87: RuntimeWarning: overflow encountered in reduce
-      return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:1955: RuntimeWarning: invalid value encountered in true_divide
-      return x / y
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:2893: RuntimeWarning: divide by zero encountered in log
-      return np.log(x)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/numpy/core/fromnumeric.py:87: RuntimeWarning: overflow encountered in reduce
-      return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: overflow encountered in exp
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:1955: RuntimeWarning: invalid value encountered in true_divide
-      return x / y
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:2893: RuntimeWarning: divide by zero encountered in log
-      return np.log(x)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/numpy/core/fromnumeric.py:87: RuntimeWarning: overflow encountered in reduce
-      return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: overflow encountered in exp
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    Sampling 4 chains for 5_000 tune and 5_000 draw iterations (20_000 + 20_000 draws total) took 6549 seconds.
-    There were 21 divergences after tuning. Increase `target_accept` or reparameterize.
-    There were 272 divergences after tuning. Increase `target_accept` or reparameterize.
-    There were 32 divergences after tuning. Increase `target_accept` or reparameterize.
-    There were 609 divergences after tuning. Increase `target_accept` or reparameterize.
-    Got error No model on context stack. trying to find log_likelihood in translation.
-    Got error No model on context stack. trying to find log_likelihood in translation.
-
 
 
 
@@ -666,7 +539,7 @@ az.plot_trace(trace_g, compact=False)
 
 
     
-![png](output_30_4.png)
+![png](images/02/output_30_4.png)
     
 
 
@@ -677,26 +550,12 @@ fares_gaussian = az.summary(flat_fares)
 fares_gaussian
 ```
 
-    Got error No model on context stack. trying to find log_likelihood in translation.
 
 
 
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -838,7 +697,7 @@ for (i, j), (k, l) in zip(comparisons, pos):
 
 
     
-![png](output_32_0.png)
+![png](images/02/output_32_0.png)
     
 
 
@@ -865,19 +724,6 @@ df.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -942,53 +788,9 @@ with pm.Model() as model1:
 az.plot_trace(trace)
 ```
 
-    Only 100 samples in chain.
-    Auto-assigning NUTS sampler...
-    Initializing NUTS using jitter+adapt_diag...
-    Multiprocess sampling (4 chains in 4 jobs)
-    NUTS: [sigma, beta, alpha]
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+    
 
 
-
-
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='4400' class='' max='4400' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [4400/4400 12:42<00:00 Sampling 4 chains, 0 divergences]
-</div>
-
-
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    Sampling 4 chains for 1_000 tune and 100 draw iterations (4_000 + 400 draws total) took 780 seconds.
-    Got error No model on context stack. trying to find log_likelihood in translation.
-    Got error No model on context stack. trying to find log_likelihood in translation.
 
 
 
@@ -1005,7 +807,7 @@ az.plot_trace(trace)
 
 
     
-![png](output_35_4.png)
+![png](images/02/output_35_4.png)
     
 
 
@@ -1036,70 +838,14 @@ with pm.Model() as model_glm:
     plt.show()
 ```
 
-    The glm module is deprecated and will be removed in version 4.0
-    We recommend to instead use Bambi https://bambinos.github.io/bambi/
-    Only 100 samples in chain.
-    Auto-assigning NUTS sampler...
-    Initializing NUTS using jitter+adapt_diag...
-    Multiprocess sampling (4 chains in 4 jobs)
-    NUTS: [sd, X2, X1, Intercept]
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
 
 
-
-
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='4400' class='' max='4400' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [4400/4400 04:13<00:00 Sampling 4 chains, 0 divergences]
-</div>
-
-
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:3167: RuntimeWarning: overflow encountered in double_scalars
-      return x * x
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: overflow encountered in impl (vectorized)
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:2893: RuntimeWarning: divide by zero encountered in log
-      return np.log(x)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: divide by zero encountered in impl (vectorized)
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/numpy/core/fromnumeric.py:87: RuntimeWarning: overflow encountered in reduce
-      return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:1955: RuntimeWarning: invalid value encountered in true_divide
-      return x / y
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
     Sampling 4 chains for 1_000 tune and 100 draw iterations (4_000 + 400 draws total) took 270 seconds.
 
 
 
     
-![png](output_38_3.png)
+![png](images/02/output_38_3.png)
     
 
 
@@ -1113,19 +859,6 @@ df.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1193,53 +926,9 @@ with pm.Model() as model_log:
 az.plot_trace(traceB)
 ```
 
-    Only 100 samples in chain.
-    Auto-assigning NUTS sampler...
-    Initializing NUTS using jitter+adapt_diag...
-    Multiprocess sampling (4 chains in 4 jobs)
-    NUTS: [beta, alpha]
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
 
 
 
-
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='4400' class='' max='4400' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [4400/4400 04:46<00:00 Sampling 4 chains, 0 divergences]
-</div>
-
-
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    Sampling 4 chains for 1_000 tune and 100 draw iterations (4_000 + 400 draws total) took 303 seconds.
-    Got error No model on context stack. trying to find log_likelihood in translation.
-    Got error No model on context stack. trying to find log_likelihood in translation.
 
 
 
@@ -1256,7 +945,7 @@ az.plot_trace(traceB)
 
 
     
-![png](output_40_4.png)
+![png](images/02/output_40_4.png)
     
 
 
@@ -1270,54 +959,16 @@ with pm.Model() as model_glm_logistic:
     plt.show()
 ```
 
-    The glm module is deprecated and will be removed in version 4.0
-    We recommend to instead use Bambi https://bambinos.github.io/bambi/
-    Only 100 samples in chain.
-    Auto-assigning NUTS sampler...
-    Initializing NUTS using jitter+adapt_diag...
-    Multiprocess sampling (4 chains in 4 jobs)
-    NUTS: [X2, X1, Intercept]
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
 
 
 
 
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='4400' class='' max='4400' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [4400/4400 04:54<00:00 Sampling 4 chains, 0 divergences]
-</div>
-
-
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
     Sampling 4 chains for 1_000 tune and 100 draw iterations (4_000 + 400 draws total) took 312 seconds.
 
 
 
     
-![png](output_41_3.png)
+![png](images/02/output_41_3.png)
     
 
 
