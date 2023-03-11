@@ -24,23 +24,7 @@ data = data.sample(frac=0.01, random_state=1)
 data.head()
 ```
 
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -211,25 +195,7 @@ with pm.Model() as model:
     trace = pm.sample(1000, tune=1000)
 ```
 
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-
-
     Running on PyMC3 v3.11.4
-
-
-    Auto-assigning NUTS sampler...
-    Initializing NUTS using jitter+adapt_diag...
-    Multiprocess sampling (4 chains in 4 jobs)
-    NUTS: [sigma, mu]
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
 
 
 
@@ -252,51 +218,6 @@ with pm.Model() as model:
 </div>
 
 
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: overflow encountered in exp
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:2893: RuntimeWarning: divide by zero encountered in log
-      return np.log(x)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: divide by zero encountered in impl (vectorized)
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:1955: RuntimeWarning: invalid value encountered in true_divide
-      return x / y
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:2893: RuntimeWarning: divide by zero encountered in log
-      return np.log(x)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: divide by zero encountered in impl (vectorized)
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/numpy/core/fromnumeric.py:87: RuntimeWarning: overflow encountered in reduce
-      return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:1955: RuntimeWarning: invalid value encountered in true_divide
-      return x / y
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/numpy/core/fromnumeric.py:87: RuntimeWarning: overflow encountered in reduce
-      return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: overflow encountered in exp
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:2893: RuntimeWarning: divide by zero encountered in log
-      return np.log(x)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: divide by zero encountered in impl (vectorized)
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:1955: RuntimeWarning: invalid value encountered in true_divide
-      return x / y
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:2893: RuntimeWarning: divide by zero encountered in log
-      return np.log(x)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: divide by zero encountered in impl (vectorized)
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/numpy/core/fromnumeric.py:87: RuntimeWarning: overflow encountered in reduce
-      return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/scalar/basic.py:1955: RuntimeWarning: invalid value encountered in true_divide
-      return x / y
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/theano/tensor/elemwise.py:826: RuntimeWarning: overflow encountered in exp
-      variables = ufunc(*ufunc_args, **ufunc_kwargs)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
     Sampling 4 chains for 1_000 tune and 1_000 draw iterations (4_000 + 4_000 draws total) took 272 seconds.
 
 
@@ -326,8 +247,6 @@ trace.varnames
 az.plot_trace(trace, compact=False)
 ```
 
-    Got error No model on context stack. trying to find log_likelihood in translation.
-    Got error No model on context stack. trying to find log_likelihood in translation.
 
 
 
@@ -351,7 +270,7 @@ az.plot_trace(trace, compact=False)
 az.plot_joint(trace, kind='kde', fill_last=False)
 ```
 
-    Got error No model on context stack. trying to find log_likelihood in translation.
+
 
 
 
@@ -373,7 +292,7 @@ az.plot_joint(trace, kind='kde', fill_last=False)
 az.summary(trace)
 ```
 
-    Got error No model on context stack. trying to find log_likelihood in translation.
+ 
 
 
 
