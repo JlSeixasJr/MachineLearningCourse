@@ -193,7 +193,7 @@ plt.yticks([0], alpha=0)
 
 
     
-![png](output_10_1.png)
+![png](images/02/coutput_10_1.png)
     
 
 
