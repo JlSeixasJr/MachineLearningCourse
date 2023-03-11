@@ -171,7 +171,7 @@ data.isnull().sum()/len(data)
 
 ## Gaussian inferences
 
-<img src="continuous.png">
+<img src="images/02/continuous.png">
 
 
 ```python
