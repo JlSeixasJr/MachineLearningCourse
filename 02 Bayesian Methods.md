@@ -193,7 +193,7 @@ plt.yticks([0], alpha=0)
 
 
     
-![png](images/02/coutput_10_1.png)
+![png](images/02/output_10_1.png)
     
 
 
@@ -342,7 +342,7 @@ az.plot_trace(trace, compact=False)
 
 
     
-![png](output_14_2.png)
+![png](images/02/output_14_2.png)
     
 
 
