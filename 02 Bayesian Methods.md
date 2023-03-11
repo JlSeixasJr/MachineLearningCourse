@@ -197,9 +197,6 @@ with pm.Model() as model:
 
     Running on PyMC3 v3.11.4
 
-
-
-
     Sampling 4 chains for 1_000 tune and 1_000 draw iterations (4_000 + 4_000 draws total) took 272 seconds.
 
 
