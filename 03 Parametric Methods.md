@@ -26,7 +26,7 @@ az.plot_kde(oriY)
 
 
     
-![png](output_2_1.png)
+![png](03/output_2_1.png)
     
 
 
