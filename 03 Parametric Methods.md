@@ -68,27 +68,6 @@ with pm.Model() as gaussian:
     NUTS: [e, b, a]
 
 
-
-
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='12000' class='' max='12000' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [12000/12000 00:14<00:00 Sampling 4 chains, 2 divergences]
-</div>
-
-
-
     Sampling 4 chains for 1_000 tune and 2_000 draw iterations (4_000 + 8_000 draws total) took 30 seconds.
     There were 2 divergences after tuning. Increase `target_accept` or reparameterize.
 
@@ -103,16 +82,13 @@ plt.figure()
     Got error No model on context stack. trying to find log_likelihood in translation.
 
 
-
-
-
     <Figure size 432x288 with 0 Axes>
 
 
 
 
     
-![png](output_5_2.png)
+![png](images/03/output_5_2.png)
     
 
 
@@ -164,7 +140,7 @@ ax.legend()
 
 
     
-![png](output_8_1.png)
+![png](images/03/output_8_1.png)
     
 
 
@@ -305,27 +281,6 @@ with pm.Model() as binary:
     NUTS: [f_sample]
 
 
-
-
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='24000' class='' max='24000' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [24000/24000 01:06<00:00 Sampling 4 chains, 19,985 divergences]
-</div>
-
-
-
     Sampling 4 chains for 1_000 tune and 5_000 draw iterations (4_000 + 20_000 draws total) took 82 seconds.
     There were 4996 divergences after tuning. Increase `target_accept` or reparameterize.
     The chain contains only diverging samples. The model is probably misspecified.
@@ -405,28 +360,6 @@ az.plot_hdi(oriX, ppc['yPred'], hdi_prob=0.1, color='lightblue')
 
 plt.plot(oriX, oriY, 'b.')
 ```
-
-
-
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='2000' class='' max='2000' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [2000/2000 00:02<00:00]
-</div>
-
-
-
 
 
 
