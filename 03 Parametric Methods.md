@@ -26,7 +26,7 @@ az.plot_kde(oriY)
 
 
     
-![png](03/output_2_1.png)
+![png](images/03/output_2_1.png)
     
 
 
@@ -42,13 +42,8 @@ plt.show()
 
 
     
-![png](output_3_0.png)
+![png](images/03/output_3_0.png)
     
-
-
-    WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
-    WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
-
 
 
 ```python
@@ -65,7 +60,7 @@ with pm.Model() as gaussian:
     trace_g = pm.sample(2000, tune=1000)
 ```
 
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:11: FutureWarning: In v4.0, pm.sample will return an `arviz.InferenceData` object instead of a `MultiTrace` by default. You can pass return_inferencedata=True or return_inferencedata=False to be safe and silence this warning.
+  
       # This is added back by InteractiveShellApp.init_path()
     Auto-assigning NUTS sampler...
     Initializing NUTS using jitter+adapt_diag...
@@ -104,9 +99,7 @@ az.plot_trace(trace_g, var_names=['a', 'b', 'e'], compact=False)
 plt.figure()
 ```
 
-    Got error No model on context stack. trying to find log_likelihood in translation.
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/arviz/data/io_pymc3_3x.py:102: FutureWarning: Using `from_pymc3` without the model will be deprecated in a future release. Not using the model will return less accurate and less useful results. Make sure you use the model argument or call from_pymc3 within a model context.
-      FutureWarning,
+
     Got error No model on context stack. trying to find log_likelihood in translation.
 
 
@@ -197,7 +190,7 @@ ax.legend()
 
 
     
-![png](output_9_1.png)
+![png](images/03/output_9_1.png)
     
 
 
@@ -217,8 +210,6 @@ with pm.Model() as model:
     trace = pm.sample(5000, start=model.test_point, step=[ess_step], progressbar=False, random_seed=1)
 ```
 
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:12: FutureWarning: In v4.0, pm.sample will return an `arviz.InferenceData` object instead of a `MultiTrace` by default. You can pass return_inferencedata=True or return_inferencedata=False to be safe and silence this warning.
-      if sys.path[0] == '':
     Multiprocess sampling (4 chains in 4 jobs)
     EllipticalSlice: [f_sample]
     Sampling 4 chains for 1_000 tune and 5_000 draw iterations (4_000 + 20_000 draws total) took 30 seconds.
@@ -247,7 +238,7 @@ ax.legend()
 
 
     
-![png](output_11_1.png)
+![png](images/03/output_11_1.png)
     
 
 
@@ -288,7 +279,7 @@ ax.set_ylim(-0.2,1.2)
 
 
     
-![png](output_14_1.png)
+![png](images/03/output_14_1.png)
     
 
 
@@ -368,7 +359,7 @@ ax.legend()
 
 
     
-![png](output_16_1.png)
+![png](images/03/output_16_1.png)
     
 
 
@@ -402,7 +393,7 @@ plt.legend()
 
 
     
-![png](output_19_1.png)
+![png](images/03/output_19_1.png)
     
 
 
@@ -445,7 +436,7 @@ plt.plot(oriX, oriY, 'b.')
 
 
     
-![png](output_20_2.png)
+![png](images/03/output_20_2.png)
     
 
 
