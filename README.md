@@ -31,6 +31,7 @@
 * hmmlearn
 * arviz
 * pymc3
+* pgmpy
 * theano
 * gensim
 * nltk
