@@ -16,7 +16,7 @@ from pgmpy.factors.discrete import TabularCPD
 * **Conditional Probability Distribution**: Probabilities of A are distributed given a certain value for probability B.
 * **Marginal Probability Distribution**: Average out the probability of A when A and B are related.
 
-<img src="PGM1.png">
+<img src="images/04/PGM.png">
 
 
 ```python
@@ -25,10 +25,7 @@ model = BayesianModel([('Diff', 'Grade'), ('Intel', 'Grade'), ('Grade', 'Letter'
 
 cpd_d = TabularCPD(variable='Diff', variable_card=2, values=[[0.6], [0.4]])
 cpd_i = TabularCPD(variable='Intel', variable_card=2, values=[[0.7], [0.3]])
-```
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/pgmpy/models/BayesianModel.py:10: FutureWarning: BayesianModel has been renamed to BayesianNetwork. Please use BayesianNetwork class, BayesianModel will be removed in future.
-      FutureWarning,
+``
 
 
 
@@ -268,13 +265,6 @@ print(infG)
 ```
 
 
-      0%|          | 0/2 [00:00<?, ?it/s]
-
-
-
-      0%|          | 0/2 [00:00<?, ?it/s]
-
-
     +----------+--------------+
     | Grade    |   phi(Grade) |
     +==========+==============+
@@ -292,13 +282,6 @@ What is the probability of someone getting a Grade A in a particular case?
 ```python
 print(infer.query(['Grade'], evidence={'Diff': 'Easy', 'Intel': 'Intelligent'}))
 ```
-
-
-    0it [00:00, ?it/s]
-
-
-
-    0it [00:00, ?it/s]
 
 
     +----------+--------------+
@@ -320,13 +303,6 @@ infer.map_query(['Grade'])
 ```
 
 
-      0%|          | 0/2 [00:00<?, ?it/s]
-
-
-
-      0%|          | 0/2 [00:00<?, ?it/s]
-
-
 
 
 
@@ -339,14 +315,6 @@ infer.map_query(['Grade'])
 #Highest probability of a particular case
 infer.map_query(['Grade'], evidence={'Diff': 'Easy', 'Intel': 'Intelligent'})
 ```
-
-
-    0it [00:00, ?it/s]
-
-
-
-    0it [00:00, ?it/s]
-
 
 
 
@@ -363,14 +331,6 @@ infer.map_query(['Letter'], evidence={'Diff': 'Hard'})
 ```
 
 
-      0%|          | 0/2 [00:00<?, ?it/s]
-
-
-
-      0%|          | 0/2 [00:00<?, ?it/s]
-
-
-
 
 
     {'Letter': 'Bad'}
@@ -384,12 +344,6 @@ infer.map_query(['Letter'], evidence={'Diff': 'Hard'})
 print(infer.query(['Grade'], evidence={'Intel': 'Dumb'}))
 ```
 
-
-      0%|          | 0/1 [00:00<?, ?it/s]
-
-
-
-      0%|          | 0/1 [00:00<?, ?it/s]
 
 
     +----------+--------------+
@@ -411,12 +365,6 @@ print(infer.query(['Grade'], evidence={'SAT': 'Bad'}))
 ```
 
 
-      0%|          | 0/2 [00:00<?, ?it/s]
-
-
-
-      0%|          | 0/2 [00:00<?, ?it/s]
-
 
     +----------+--------------+
     | Grade    |   phi(Grade) |
@@ -437,12 +385,6 @@ print(infer.query(['Diff']))
 ```
 
 
-    0it [00:00, ?it/s]
-
-
-
-    0it [00:00, ?it/s]
-
 
     +------------+-------------+
     | Diff       |   phi(Diff) |
@@ -458,12 +400,6 @@ print(infer.query(['Diff']))
 print(infer.query(['Diff'], evidence={'Intel': 'Intelligent'}))
 ```
 
-
-    0it [00:00, ?it/s]
-
-
-
-    0it [00:00, ?it/s]
 
 
     +------------+-------------+
@@ -482,20 +418,6 @@ grade = infer.map_query(['Grade'], evidence={'Intel': 'Intelligent'})
 print(infer.query(['Diff'], evidence={'Grade':grade['Grade'], 'Intel': 'Intelligent'}))
 ```
 
-
-      0%|          | 0/1 [00:00<?, ?it/s]
-
-
-
-      0%|          | 0/1 [00:00<?, ?it/s]
-
-
-
-    0it [00:00, ?it/s]
-
-
-
-    0it [00:00, ?it/s]
 
 
     +------------+-------------+
@@ -516,8 +438,6 @@ bp.calibrate()
 print(bp.query(variables=['Diff', 'Intel', 'SAT', 'Grade', 'Letter']))
 ```
 
-
-    0it [00:00, ?it/s]
 
 
     +--------------------+-----------+----------+------------+--------------+------------------------------------+
@@ -720,8 +640,6 @@ test.drop('Grade', axis=1, inplace=True)
 model.predict(test)
 ```
 
-
-      0%|          | 0/16 [00:00<?, ?it/s]
 
 
 
