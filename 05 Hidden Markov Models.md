@@ -20,7 +20,7 @@ print(version('hmmlearn'))
     0.2.7
 
 
-<img src="hmm.png">
+<img src="images/05/hmm.png">
 
 States are not usually visible.
 
@@ -615,7 +615,7 @@ plt.show()
 
 
     
-![png](output_9_0.png)
+![png](images/05/output_9_0.png)
     
 
 
@@ -673,7 +673,7 @@ print(remodel.score(X))
 
 
     
-![png](output_11_0.png)
+![png](images/05/output_11_0.png)
     
 
 
@@ -706,7 +706,7 @@ print(acc)
 
 
     
-![png](output_13_0.png)
+![png](images/05/output_13_0.png)
     
 
 
