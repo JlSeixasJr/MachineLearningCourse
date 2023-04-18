@@ -1,3 +1,263 @@
+# Markov Chain Monte Carlo
+
+* **Problem**: Calculate the area of a weird shaped object.
+
+* Can count pixel, but let's say the image is huge! Millions of pixels!
+* Try hitting the object with a thousand pixels (still a big number, but way smaller).
+* Then, the estimate area of the object is the size of the image multiplied by the probability of hitting the object.
+
+<img src="images/06/object.png">
+
+$$Area = height * width * P(O)$$
+
+$$480000 = 600 * 800$$
+
+
+```python
+import numpy as np
+
+np.random.seed(27)
+
+alpha, sigma = 1, 1
+beta = [1, 2.5]
+size = 100
+X1 = np.linspace(0, 1, size)
+X2 = np.linspace(0,.2, size)
+Y = alpha + beta[0]*X1 + beta[1]*X2 + np.random.randn(size)*sigma
+```
+
+
+```python
+import pymc3 as pm
+print("PyMC3 version: " + pm.__version__)
+
+with pm.Model() as model:
+    # Priors for unknown model parameters
+    alpha = pm.Normal('alpha', mu=0, sd=10)
+    beta = pm.Normal('beta', mu=0, sd=10, shape=2)
+    sigma = pm.HalfNormal('sigma', sd=1)
+
+    # Expected value of outcome
+    mu = alpha + beta[0]*X1 + beta[1]*X2
+
+    # Likelihood (sampling distribution) of observations
+    Y_obs = pm.Normal('Y_obs', mu=mu, sd=sigma, observed=Y)
+```
+
+    PyMC3 version: 3.11.4
+
+
+
+```python
+from scipy import optimize
+with model:
+    # obtain starting values via MAP
+    start = pm.find_MAP(method="powell")
+    # instantiate sampler
+    step = pm.Slice(vars=[sigma])
+    # draw 5000 posterior samples
+    trace = pm.sample(5000, start=start, step=step)
+```
+
+
+
+<div>
+    <style>
+        /* Turns off some styling */
+        progress {
+            /* gets rid of default border in Firefox and Opera. */
+            border: none;
+            /* Needs to be in here for Safari polyfill so background images work as expected. */
+            background-size: auto;
+        }
+        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+            background: #F44336;
+        }
+    </style>
+  <progress value='272' class='' max='272' style='width:300px; height:20px; vertical-align: middle;'></progress>
+  100.00% [272/272 00:00<00:00 logp = -140.74, ||grad|| = 0.23064]
+</div>
+
+
+
+    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/optimize/_minimize.py:523: RuntimeWarning: Method powell does not use gradient information (jac).
+      RuntimeWarning)
+
+
+    
+
+
+    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:8: FutureWarning: In v4.0, pm.sample will return an `arviz.InferenceData` object instead of a `MultiTrace` by default. You can pass return_inferencedata=True or return_inferencedata=False to be safe and silence this warning.
+      
+    Multiprocess sampling (4 chains in 4 jobs)
+    CompoundStep
+    >Slice: [sigma]
+    >NUTS: [beta, alpha]
+
+
+
+
+<div>
+    <style>
+        /* Turns off some styling */
+        progress {
+            /* gets rid of default border in Firefox and Opera. */
+            border: none;
+            /* Needs to be in here for Safari polyfill so background images work as expected. */
+            background-size: auto;
+        }
+        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+            background: #F44336;
+        }
+    </style>
+  <progress value='24000' class='' max='24000' style='width:300px; height:20px; vertical-align: middle;'></progress>
+  100.00% [24000/24000 01:31<00:00 Sampling 4 chains, 11 divergences]
+</div>
+
+
+
+    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
+      return _boost._beta_ppf(q, a, b)
+    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
+      return _boost._beta_ppf(q, a, b)
+    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
+      return _boost._beta_ppf(q, a, b)
+    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
+      return _boost._beta_ppf(q, a, b)
+    Sampling 4 chains for 1_000 tune and 5_000 draw iterations (4_000 + 20_000 draws total) took 125 seconds.
+    There were 8 divergences after tuning. Increase `target_accept` or reparameterize.
+    There were 3 divergences after tuning. Increase `target_accept` or reparameterize.
+
+
+
+```python
+pm.traceplot(trace[4000:])
+```
+
+    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:1: DeprecationWarning: The function `traceplot` from PyMC3 is just an alias for `plot_trace` from ArviZ. Please switch to `pymc3.plot_trace` or `arviz.plot_trace`.
+      """Entry point for launching an IPython kernel.
+    Got error No model on context stack. trying to find log_likelihood in translation.
+    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/arviz/data/io_pymc3_3x.py:102: FutureWarning: Using `from_pymc3` without the model will be deprecated in a future release. Not using the model will return less accurate and less useful results. Make sure you use the model argument or call from_pymc3 within a model context.
+      FutureWarning,
+    Got error No model on context stack. trying to find log_likelihood in translation.
+
+
+
+
+
+    array([[<AxesSubplot:title={'center':'alpha'}>,
+            <AxesSubplot:title={'center':'alpha'}>],
+           [<AxesSubplot:title={'center':'beta'}>,
+            <AxesSubplot:title={'center':'beta'}>],
+           [<AxesSubplot:title={'center':'sigma'}>,
+            <AxesSubplot:title={'center':'sigma'}>]], dtype=object)
+
+
+
+
+    
+![png](images/06/output_7_2.png)
+    
+
+
+
+```python
+pm.summary(trace[4000:])
+```
+
+    Got error No model on context stack. trying to find log_likelihood in translation.
+    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/arviz/data/io_pymc3_3x.py:102: FutureWarning: Using `from_pymc3` without the model will be deprecated in a future release. Not using the model will return less accurate and less useful results. Make sure you use the model argument or call from_pymc3 within a model context.
+      FutureWarning,
+
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean</th>
+      <th>sd</th>
+      <th>hdi_3%</th>
+      <th>hdi_97%</th>
+      <th>mcse_mean</th>
+      <th>mcse_sd</th>
+      <th>ess_bulk</th>
+      <th>ess_tail</th>
+      <th>r_hat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>alpha</th>
+      <td>1.234</td>
+      <td>0.180</td>
+      <td>0.888</td>
+      <td>1.562</td>
+      <td>0.004</td>
+      <td>0.003</td>
+      <td>1681.0</td>
+      <td>1605.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>beta[0]</th>
+      <td>1.112</td>
+      <td>2.073</td>
+      <td>-2.879</td>
+      <td>4.827</td>
+      <td>0.061</td>
+      <td>0.043</td>
+      <td>1159.0</td>
+      <td>1309.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>beta[1]</th>
+      <td>0.601</td>
+      <td>10.228</td>
+      <td>-19.067</td>
+      <td>18.748</td>
+      <td>0.298</td>
+      <td>0.223</td>
+      <td>1185.0</td>
+      <td>1239.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>sigma</th>
+      <td>0.907</td>
+      <td>0.063</td>
+      <td>0.795</td>
+      <td>1.026</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>3702.0</td>
+      <td>2780.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
 # Latent Dirichlet Allocation
 
 conda install -c conda-forge gensim
@@ -817,6 +1077,3 @@ for index, score in sorted(lda_model[bow_vector], key=lambda tup: -1*tup[1]):
     Score: 0.01668337918817997	 Topic: 0.036*"govern" + 0.022*"market" + 0.022*"coast" + 0.020*"north" + 0.016*"rise"
     Score: 0.01668337918817997	 Topic: 0.022*"hospit" + 0.020*"tasmanian" + 0.020*"hous" + 0.018*"farmer" + 0.016*"feder"
     Score: 0.01668337918817997	 Topic: 0.059*"australia" + 0.019*"hour" + 0.017*"win" + 0.014*"time" + 0.014*"melbourn"
-
-
-https://pymc3-testing.readthedocs.io/en/rtd-docs/notebooks/Diagnosing_biased_Inference_with_Divergences.html
