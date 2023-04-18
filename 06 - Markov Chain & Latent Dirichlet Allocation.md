@@ -62,32 +62,9 @@ with model:
 
 
 <div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
   <progress value='272' class='' max='272' style='width:300px; height:20px; vertical-align: middle;'></progress>
   100.00% [272/272 00:00<00:00 logp = -140.74, ||grad|| = 0.23064]
 </div>
-
-
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/optimize/_minimize.py:523: RuntimeWarning: Method powell does not use gradient information (jac).
-      RuntimeWarning)
-
-
-    
-
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:8: FutureWarning: In v4.0, pm.sample will return an `arviz.InferenceData` object instead of a `MultiTrace` by default. You can pass return_inferencedata=True or return_inferencedata=False to be safe and silence this warning.
       
     Multiprocess sampling (4 chains in 4 jobs)
     CompoundStep
@@ -115,15 +92,6 @@ with model:
 </div>
 
 
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:624: RuntimeWarning: overflow encountered in _beta_ppf
-      return _boost._beta_ppf(q, a, b)
     Sampling 4 chains for 1_000 tune and 5_000 draw iterations (4_000 + 20_000 draws total) took 125 seconds.
     There were 8 divergences after tuning. Increase `target_accept` or reparameterize.
     There were 3 divergences after tuning. Increase `target_accept` or reparameterize.
@@ -133,13 +101,6 @@ with model:
 ```python
 pm.traceplot(trace[4000:])
 ```
-
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:1: DeprecationWarning: The function `traceplot` from PyMC3 is just an alias for `plot_trace` from ArviZ. Please switch to `pymc3.plot_trace` or `arviz.plot_trace`.
-      """Entry point for launching an IPython kernel.
-    Got error No model on context stack. trying to find log_likelihood in translation.
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/arviz/data/io_pymc3_3x.py:102: FutureWarning: Using `from_pymc3` without the model will be deprecated in a future release. Not using the model will return less accurate and less useful results. Make sure you use the model argument or call from_pymc3 within a model context.
-      FutureWarning,
-    Got error No model on context stack. trying to find log_likelihood in translation.
 
 
 
@@ -260,10 +221,6 @@ pm.summary(trace[4000:])
 
 # Latent Dirichlet Allocation
 
-conda install -c conda-forge gensim
-
-conda install -c conda-forge nltk
-
 
 ```python
 import gensim
@@ -276,8 +233,6 @@ from importlib_metadata import version
 print("stop_words version: " + version('stop_words'))
 ```
 
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/gensim/similarities/__init__.py:15: UserWarning: The gensim.similarities.levenshtein submodule is disabled, because the optional Levenshtein package <https://pypi.org/project/python-Levenshtein/> is unavailable. Install Levenhstein (e.g. `pip install python-Levenshtein`) to suppress this warning.
-      warnings.warn(msg)
 
 
     nltk version: 3.6.7
@@ -626,13 +581,6 @@ nltk.download('wordnet')
 nltk.download('omw-1.4')
 ```
 
-    [nltk_data] Downloading package wordnet to
-    [nltk_data]     /Users/joseluis/nltk_data...
-    [nltk_data]   Package wordnet is already up-to-date!
-    [nltk_data] Downloading package omw-1.4 to
-    [nltk_data]     /Users/joseluis/nltk_data...
-    [nltk_data]   Package omw-1.4 is already up-to-date!
-
 
 
 
@@ -665,19 +613,6 @@ pd.DataFrame(data = {'original word': original_words, 'stemmed': singles})
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
