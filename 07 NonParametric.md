@@ -32,7 +32,7 @@ plt.show()
 
 
     
-![png](output_3_0.png)
+![png](images/07/output_3_0.png)
     
 
 
@@ -46,7 +46,7 @@ plt.show()
 
 
     
-![png](output_4_0.png)
+![png](images/07/output_4_0.png)
     
 
 
@@ -86,7 +86,7 @@ plot_decision_regions(x, y, clf=knn, legend=2, ax=ax)
 
 
     
-![png](output_7_1.png)
+![png](images/07/output_7_1.png)
     
 
 
@@ -134,7 +134,7 @@ plot_decision_regions(x, y, clf=knn, legend=2, ax=ax)
 
 
     
-![png](output_9_1.png)
+![png](images/07/output_9_1.png)
     
 
 
@@ -158,7 +158,7 @@ plot_decision_regions(x, y, clf=knn, legend=2, ax=ax)
 
 
     
-![png](output_10_1.png)
+![png](images/07/output_10_1.png)
     
 
 
@@ -187,7 +187,7 @@ plt.scatter(xTest[:,0], xTest[:,1], c='k', marker='+', s=50)
 
 
     
-![png](output_11_1.png)
+![png](images/07/output_11_1.png)
     
 
 
@@ -228,9 +228,6 @@ print(metrics.classification_report(yTest, knnPred))
 metrics.plot_confusion_matrix(knn, xTest, yTest)
 ```
 
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function plot_confusion_matrix is deprecated; Function `plot_confusion_matrix` is deprecated in 1.0 and will be removed in 1.2. Use one of the class methods: ConfusionMatrixDisplay.from_predictions or ConfusionMatrixDisplay.from_estimator.
-      warnings.warn(msg, category=FutureWarning)
-
 
 
 
@@ -241,11 +238,11 @@ metrics.plot_confusion_matrix(knn, xTest, yTest)
 
 
     
-![png](output_13_2.png)
+![png](images/07/output_13_2.png)
     
 
 
-<img src="BiasVariance.png">
+<img src="images/07/BiasVariance.png">
 
 ## Prototype kMeans
 
@@ -274,7 +271,7 @@ plt.legend(scatterpoints=1)
 
 
     
-![png](output_16_1.png)
+![png](images/07/output_16_1.png)
     
 
 
@@ -311,7 +308,7 @@ plt.scatter(xTest[:,0], xTest[:,1], c='k', marker='+', s=50)
 
 
     
-![png](output_18_1.png)
+![png](images/07/output_18_1.png)
     
 
 
@@ -349,9 +346,6 @@ print(metrics.classification_report(yTest, knnPred))
 metrics.plot_confusion_matrix(knn, xTest, yTest)
 ```
 
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function plot_confusion_matrix is deprecated; Function `plot_confusion_matrix` is deprecated in 1.0 and will be removed in 1.2. Use one of the class methods: ConfusionMatrixDisplay.from_predictions or ConfusionMatrixDisplay.from_estimator.
-      warnings.warn(msg, category=FutureWarning)
-
 
 
 
@@ -362,7 +356,7 @@ metrics.plot_confusion_matrix(knn, xTest, yTest)
 
 
     
-![png](output_20_2.png)
+![png](images/07/output_20_2.png)
     
 
 
@@ -389,7 +383,7 @@ plt.legend(scatterpoints=1)
 
 
     
-![png](output_21_1.png)
+![png](images/07/output_21_1.png)
     
 
 
@@ -435,7 +429,7 @@ plt.scatter(xTest[:,0], xTest[:,1], c='k', marker='+', s=50)
 
 
     
-![png](output_23_1.png)
+![png](images/07/output_23_1.png)
     
 
 
@@ -473,9 +467,6 @@ print(metrics.classification_report(yTest, knnPred))
 metrics.plot_confusion_matrix(knn, xTest, yTest)
 ```
 
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function plot_confusion_matrix is deprecated; Function `plot_confusion_matrix` is deprecated in 1.0 and will be removed in 1.2. Use one of the class methods: ConfusionMatrixDisplay.from_predictions or ConfusionMatrixDisplay.from_estimator.
-      warnings.warn(msg, category=FutureWarning)
-
 
 
 
@@ -486,6 +477,6 @@ metrics.plot_confusion_matrix(knn, xTest, yTest)
 
 
     
-![png](output_25_2.png)
+![png](images/07/output_25_2.png)
     
 
