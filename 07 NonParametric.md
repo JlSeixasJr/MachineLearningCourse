@@ -110,7 +110,7 @@ plot_decision_regions(x, y, clf=knn, legend=2, ax=ax)
 
 
     
-![png](output_8_1.png)
+![png](images/07/output_8_1.png)
     
 
 
