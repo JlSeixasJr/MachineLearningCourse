@@ -14,19 +14,6 @@ df.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -82,19 +69,6 @@ df.describe()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -177,7 +151,7 @@ sns.scatterplot(data=df, x='X', y='Y', hue='Class', palette='viridis')
 
 
     
-![png](output_4_1.png)
+![png](images/08/output_4_1.png)
     
 
 
@@ -215,7 +189,7 @@ sns.scatterplot(data=train, x='X', y='Y', hue='Class', palette='viridis')
 
 
     
-![png](output_8_1.png)
+![png](images/08/output_8_1.png)
     
 
 
@@ -273,7 +247,7 @@ dt.fit(xTrain, yTrain)
 
 
     
-![png](output_10_2.png)
+![png](images/08/output_10_2.png)
     
 
 
@@ -308,7 +282,7 @@ ax.contourf(X, Y, Z, cmap='jet', alpha=0.25)
 
 
     
-![png](output_11_2.png)
+![png](images/08/output_11_2.png)
     
 
 
@@ -341,7 +315,7 @@ plt.show()
 
 
     
-![png](output_12_0.png)
+![png](images/08/output_12_0.png)
     
 
 
@@ -560,7 +534,7 @@ plot_tree(dt, feature_names=df.columns[:-1], class_names=df['Class'].unique().as
 
 
     
-![png](output_14_1.png)
+![png](images/08/output_14_1.png)
     
 
 
@@ -902,7 +876,7 @@ plot_tree(model, feature_names=df.columns[:-1], class_names=df['Class'].unique()
 
 
     
-![png](output_15_1.png)
+![png](images/08/output_15_1.png)
     
 
 
@@ -941,10 +915,6 @@ metrics.plot_confusion_matrix(dt, xTest, yTest)
     
 
 
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function plot_confusion_matrix is deprecated; Function `plot_confusion_matrix` is deprecated in 1.0 and will be removed in 1.2. Use one of the class methods: ConfusionMatrixDisplay.from_predictions or ConfusionMatrixDisplay.from_estimator.
-      warnings.warn(msg, category=FutureWarning)
-
-
 
 
 
@@ -954,7 +924,7 @@ metrics.plot_confusion_matrix(dt, xTest, yTest)
 
 
     
-![png](output_16_3.png)
+![png](images/08/output_16_3.png)
     
 
 
@@ -998,10 +968,6 @@ metrics.plot_confusion_matrix(rfc, xTest, yTest)
     
 
 
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function plot_confusion_matrix is deprecated; Function `plot_confusion_matrix` is deprecated in 1.0 and will be removed in 1.2. Use one of the class methods: ConfusionMatrixDisplay.from_predictions or ConfusionMatrixDisplay.from_estimator.
-      warnings.warn(msg, category=FutureWarning)
-
-
 
 
 
@@ -1011,7 +977,7 @@ metrics.plot_confusion_matrix(rfc, xTest, yTest)
 
 
     
-![png](output_18_3.png)
+![png](images/08/output_18_3.png)
     
 
 
@@ -1311,7 +1277,7 @@ plot_tree(rfc.estimators_[5], feature_names=df.columns[:-1], class_names=df['Cla
 
 
     
-![png](output_19_1.png)
+![png](images/08/output_19_1.png)
     
 
 
