@@ -1312,8 +1312,12 @@ plt.show()
 ![png](images/08/output_21_0.png)
     
 
-
-
 ```python
+import dtreeviz
 
+viz = dtreeviz.model(model, xTrain, yTrain)
+
+viz.view()
 ```
+    
+![svg](images/08/output_22_0.svg)
