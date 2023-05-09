@@ -1309,7 +1309,7 @@ plt.show()
 
 
     
-![png](output_21_0.png)
+![png](images/08/output_21_0.png)
     
 
 
