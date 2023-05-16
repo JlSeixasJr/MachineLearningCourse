@@ -141,10 +141,6 @@ sns.scatterplot(data=df, x='X', y='Y', hue='Class', palette='viridis')
 
 
 
-    <AxesSubplot:xlabel='X', ylabel='Y'>
-
-
-
 
     
 ![png](images/08/output_3_1.png)
@@ -171,11 +167,6 @@ len(train), len(test), len(val)
 plt.figure(figsize=(10,10))
 sns.scatterplot(data=train, x='X', y='Y', hue='Class', palette='viridis')
 ```
-
-
-
-
-    <AxesSubplot:xlabel='X', ylabel='Y'>
 
 
 
