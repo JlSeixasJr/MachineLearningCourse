@@ -143,7 +143,7 @@ sns.scatterplot(data=df, x='X', y='Y', hue='Class', palette='viridis')
 
 
     
-![png](images/08/output_3_1.png)
+![png](images/09/output_3_1.png)
     
 
 
@@ -172,7 +172,7 @@ sns.scatterplot(data=train, x='X', y='Y', hue='Class', palette='viridis')
 
 
     
-![png](images/08/output_5_1.png)
+![png](images/09/output_5_1.png)
     
 
 
@@ -210,7 +210,7 @@ ax = sns.lineplot(x=Cs, y=accuracies)
 
 
     
-![png](images/08/output_7_0.png)
+![png](images/09/output_7_0.png)
     
 
 
@@ -251,7 +251,7 @@ plot_model(model2, train)
 
 
     
-![png](images/08/output_9_1.png)
+![png](images/09/output_9_1.png)
     
 
 
@@ -266,7 +266,7 @@ plot_model(model00, train)
 
 
     
-![png](images/08/output_10_1.png)
+![png](images/09/output_10_1.png)
     
 
 
@@ -282,7 +282,7 @@ plot_model(model01, train)
 
 
     
-![png](images/08/output_11_1.png)
+![png](images/09/output_11_1.png)
     
 
 
@@ -322,7 +322,7 @@ plot_model(model3, train)
 
 
     
-![png](images/08/output_13_1.png)
+![png](images/09/output_13_1.png)
     
 
 
@@ -364,7 +364,7 @@ plot_model(model4, train)
 
 
     
-![png](images/08/output_15_1.png)
+![png](images/09/output_15_1.png)
     
 
 
@@ -391,7 +391,7 @@ print(model4_acc)
 
 ### Particle swarm optimization
 
-<img src="images/08/pso.gif">
+<img src="images/09/pso.gif">
 
 
 ```python
@@ -484,4 +484,4 @@ metrics.plot_confusion_matrix(Model, xTest, yTest)
 
 
     
-![png](images/08/output_22_3.png)
+![png](images/09/output_22_3.png)
