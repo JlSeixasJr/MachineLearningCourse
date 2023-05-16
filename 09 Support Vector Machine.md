@@ -9,22 +9,7 @@ df.head()
 ```
 
 
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -80,19 +65,6 @@ df.describe()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -175,7 +147,7 @@ sns.scatterplot(data=df, x='X', y='Y', hue='Class', palette='viridis')
 
 
     
-![png](output_3_1.png)
+![png](images/08/output_3_1.png)
     
 
 
@@ -209,7 +181,7 @@ sns.scatterplot(data=train, x='X', y='Y', hue='Class', palette='viridis')
 
 
     
-![png](output_5_1.png)
+![png](images/08/output_5_1.png)
     
 
 
@@ -247,7 +219,7 @@ ax = sns.lineplot(x=Cs, y=accuracies)
 
 
     
-![png](output_7_0.png)
+![png](images/08/output_7_0.png)
     
 
 
@@ -285,12 +257,10 @@ plot_model(model2, train)
 ```
 
 
-    <Figure size 720x720 with 0 Axes>
-
 
 
     
-![png](output_9_1.png)
+![png](images/08/output_9_1.png)
     
 
 
@@ -303,12 +273,9 @@ plot_model(model00, train)
 ```
 
 
-    <Figure size 720x720 with 0 Axes>
-
-
 
     
-![png](output_10_1.png)
+![png](images/08/output_10_1.png)
     
 
 
@@ -321,12 +288,10 @@ plot_model(model01, train)
 ```
 
 
-    <Figure size 720x720 with 0 Axes>
-
 
 
     
-![png](output_11_1.png)
+![png](images/08/output_11_1.png)
     
 
 
@@ -363,12 +328,10 @@ plot_model(model3, train)
 ```
 
 
-    <Figure size 720x720 with 0 Axes>
-
 
 
     
-![png](output_13_1.png)
+![png](images/08/output_13_1.png)
     
 
 
@@ -410,7 +373,7 @@ plot_model(model4, train)
 
 
     
-![png](output_15_1.png)
+![png](images/08/output_15_1.png)
     
 
 
@@ -437,7 +400,7 @@ print(model4_acc)
 
 ### Particle swarm optimization
 
-<img src="pso.gif">
+<img src="images/08/pso.gif">
 
 
 ```python
@@ -523,12 +486,6 @@ metrics.plot_confusion_matrix(Model, xTest, yTest)
     
 
 
-    /Users/joseluis/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function plot_confusion_matrix is deprecated; Function `plot_confusion_matrix` is deprecated in 1.0 and will be removed in 1.2. Use one of the class methods: ConfusionMatrixDisplay.from_predictions or ConfusionMatrixDisplay.from_estimator.
-      warnings.warn(msg, category=FutureWarning)
-
-
-
-
 
     <sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x7fa307580b90>
 
@@ -536,11 +493,4 @@ metrics.plot_confusion_matrix(Model, xTest, yTest)
 
 
     
-![png](output_22_3.png)
-    
-
-
-
-```python
-
-```
+![png](images/08/output_22_3.png)
