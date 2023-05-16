@@ -6,7 +6,7 @@ Dataset has blobs and spread classes, good to see the boudaries on different dep
 ```python
 import pandas as pd
 
-df = pd.read_csv('data.csv')
+df = pd.read_csv('dataset/data.csv')
 df.head()
 ```
 
