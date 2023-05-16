@@ -359,9 +359,6 @@ plot_model(model4, train)
 ```
 
 
-    <Figure size 720x720 with 0 Axes>
-
-
 
     
 ![png](images/09/output_15_1.png)
