@@ -15,10 +15,10 @@
 | Mar  | Parametric Methods |
 | Mar  | PGM |
 | Apr  | HMM |
-[comment]: <> | Apr  | **Easter Monday** |
+[//]: # | Apr  | **Easter Monday** |
 | Apr  | Markov Chain + LDA |
 | Apr  | Lazy Learner |
-[comment]: <> | May  | **Labor day** |
+[//]: # | May  | **Labor day** |
 | May  | Decision Tree |
 | May  | Kernel Machines |
 | May  | Consultation |
