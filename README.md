@@ -4,7 +4,7 @@
 
 #### José Luis Seixas Junior
 #### email: jlseixasjr@inf.elte.hu
-#### Room: 7.33
+#### Room: 7.26
 
 
 | Reference Week | Practical |
@@ -15,10 +15,8 @@
 | Mar  | Parametric Methods |
 | Mar  | PGM |
 | Apr  | HMM |
-| Apr  | **Easter Monday** |
 | Apr  | Markov Chain + LDA |
 | Apr  | Lazy Learner |
-| May  | **Labor day** |
 | May  | Decision Tree |
 | May  | Kernel Machines |
 | May  | Consultation |
