@@ -4,22 +4,23 @@
 
 #### José Luis Seixas Junior
 #### email: jlseixasjr@inf.elte.hu
-#### Room: 7.26
+#### Room: 7.25
 
 
-| Reference Week | Practical |
+| Reference Week | Lectures |
 | :-: | :- | 
-| Feb  | Before classes |
-| Mar  | Introduction |
-| Mar  | Bayesian Methods |
-| Mar  | Parametric Methods |
-| Mar  | PGM |
-| Apr  | HMM |
-| Apr  | Markov Chain + LDA |
-| Apr  | Lazy Learner |
-| May  | Decision Tree |
-| May  | Kernel Machines |
-| May  | Consultation |
+| Feb 12 | Introduction |
+| Feb 19 | Supervised Learning |
+| Feb 26 | Bayesian Methods |
+| Mar 04 | Parametric Methods |
+| Mar 11 | PGM |
+| Mar 18 | HMM |
+| Apr 08 | Markov Chain + LDA |
+| Apr 15 | Lazy Learner |
+| Apr 22 | Decision Tree |
+| Apr 29 | Kernel Machines |
+| May 06 | Combining Methods |
+| May 13 | Consultation |
 
 ## Packages
 * numpy
