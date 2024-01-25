@@ -9,18 +9,19 @@
 
 | Reference Week | Lectures |
 | :-: | :- | 
-| Feb 12 | Introduction |
-| Feb 19 | Bayesian Methods |
-| Feb 26 | Parametric Methods |
-| Mar 04 | PGM |
-| Mar 11 | HMM |
-| Mar 18 | Markov Chain + LDA |
-| Apr 08 | Lazy Learner |
-| Apr 15 | Decision Trees |
-| Apr 22 | Kernel Machines |
-| Apr 29 | Combining Methods |
-| May 06 | Consultation (Probabilistic) |
-| May 13 | Consultation |
+| Feb 15 | Introduction |
+| Feb 22 | Bayesian Methods |
+| Feb 29 | Parametric Methods |
+| Mar 07 | PGM |
+| Mar 14 | HMM |
+| Mar 21 | Markov Chain + LDA |
+| Apr 04 | Consultation (Probabilistic) |
+| Apr 11 | Lazy Learner |
+| Apr 18 | Decision Trees |
+| Apr 25 | Kernel Machines |
+| May 02 | Combining Methods |
+| May 09 | **Not sure** |
+| May 16 | Consultation |
 
 ## Packages
 * numpy
