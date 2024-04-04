@@ -9,19 +9,19 @@
 
 | Reference Week | Lectures |
 | :-: | :- | 
-| Feb 15 | Introduction |
-| Feb 22 | Bayesian Methods |
+| Feb 15 | Introduction* |
+| Feb 22 | Supervised learning and Bayes' Theorem |
 | Feb 29 | Parametric Methods |
 | Mar 07 | PGM |
 | Mar 14 | HMM |
-| Mar 21 | Markov Chain + LDA |
-| Apr 04 | Consultation (Probabilistic) |
-| Apr 11 | Lazy Learner |
+| Mar 21 | Consultation (Probabilistic)  |
+| Apr 04 | Lazy Learner |
+| Apr 11 | **Midterm** |
 | Apr 18 | Decision Trees |
 | Apr 25 | Kernel Machines |
 | May 02 | Combining Methods |
-| May 09 | **Not sure** |
-| May 16 | Consultation |
+| May 09 | Consultation |
+| May 16 | **Midterm** |
 
 ## Packages
 * numpy
