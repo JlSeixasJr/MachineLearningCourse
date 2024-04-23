@@ -20,7 +20,7 @@
 | Apr 18 | Decision Trees |
 | Apr 25 | Kernel Machines |
 | May 02 | Combining Methods |
-| May 09 | Consultation |
+| May 09 | **Neumann Day** No classes |
 | May 16 | **Midterm** |
 
 ## Packages
